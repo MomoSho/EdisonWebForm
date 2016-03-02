@@ -17,3 +17,14 @@ E2E Notes
 * http://www.guru99.com/end-to-end-testing.html
 	- It uses actual production like data and test environment to simulate real-time settings
 	- End to end testing is the process verifying a software system along with its sub-systems. The biggest challenge in this testing is to have enough knowledge of the whole system as well as interconnected sub-system.
+
+>> To be investigated
+http://eisenbergeffect.bluespire.com/untitled/
+
+https://www.google.com/search?q=How+to+do+End+2+end%2FBDD+testing+in+an+AngularJS+App+using+protractor+and+cucumber.js&oq=How+to+do+End+2+end%2FBDD+testing+in+an+AngularJS+App+using+protractor+and+cucumber.js&aqs=chrome..69i57.335j0j4&sourceid=chrome&es_sm=93&ie=UTF-8
+
+https://www.npmjs.com/package/protractor-cucumber
+
+http://www.infoq.com/news/2014/04/cucumberjs-bdd-biezemans
+
+https://github.com/cucumber/cucumber-js
