@@ -1,0 +1,19 @@
+E2E Notes
+
+* https://docs.angularjs.org/guide/e2e-testing
+	- As applications grow in size and complexity, it becomes unrealistic to rely on manual testing to verify the correctness of new features, catch bugs and notice regressions. Unit tests are the first line of defense for catching bugs, but sometimes issues come up with integration between components which can't be captured in a unit test.
+
+
+* https://angular.github.io/protractor/#/
+	- Protractor is an end-to-end test framework for AngularJS applications. Protractor runs tests against your application running in a real browser, interacting with it as a user would.
+	
+* http://googletesting.blogspot.com/2015/04/just-say-no-to-more-end-to-end-tests.html
+	- Thus, to evaluate any testing strategy, you cannot just evaluate how it finds bugs. You also must evaluate how it enables developers to fix (and even prevent) bugs.
+	- So how do we create that ideal feedback loop? By thinking smaller, not larger.
+	- 
+	
+* http://www.techopedia.com/definition/7035/end-to-end-test
+
+* http://www.guru99.com/end-to-end-testing.html
+	- It uses actual production like data and test environment to simulate real-time settings
+	- End to end testing is the process verifying a software system along with its sub-systems. The biggest challenge in this testing is to have enough knowledge of the whole system as well as interconnected sub-system.
