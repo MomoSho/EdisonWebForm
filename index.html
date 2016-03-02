@@ -1,15 +1,44 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en" ng-app="formApp">
+<head>
+    <meta charset="utf-8">
+    <title>Edison Web Form App</title>
+    <meta name="description" content="">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="js/formApp.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+</head>
 
-<html ng-app="webForm">
-	<head>
-		<title>Edison Web Form</title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-		<script type="text/javascript" src="js/app.js"></script>
-	</head>
-	
-	<body ng-controller="FormController">
-		<form>
-			
-		</form>
-	</body>
+<body>
+    <ul class="menu">
+        <li><a href="#/view1">view1</a></li>
+        <li><a href="#/view2">view2</a></li>
+    </ul>
+
+    <div ng-controller="FormController">
+        <form novalidate class="simple-form">
+            Name: <input type="text" ng-model="user.name" name="uName"/> <br/>
+            E-mail: <input type="email" ng-model="user.email" name="uEmail" required=""/> <br/>
+                    <div ng-show="form.$submitted || form.uEmail.$touched">
+                        <span ng-show="form.uEmail.$error.required">Please enter your email</span>
+                        <span ng-show="form.uEmail.$error.email">Please enter a valid email</span>
+                    </div>
+            Favorite Superhero: <input type="text" ng-model="user.hero"/> <br/>
+            Gender: <input type="radio" ng-model="user.gender" value="Male"/>Male
+                    <input type="radio" ng-model="user.gender" value="Female"/>Female <br/>
+            <input type="checkbox" ng-model="user.agree" name="userAgrees" required=""/>
+            I agree: <input ng-show="user.agree" type="text" ng-model="user.agreesSign" required=""/> <br/>
+                    <div ng-show="form.$submitted || form.userAgrees.$touched">
+                        <div ng-show="!user.agree || !user.agreesSign">Please agree and sign</div>
+                    </div>
+            <input type="button" ng-click="reset(form)" value="Reset"/>
+            <input type="submit" ng-click="update(user)" value="Save"/>
+        </form>
+
+        <div id="preview">
+            <span>Submission: {{user | json}}</span>
+            <span>Database: {{data | json}}</span>
+        </div>
+    </div>
+</body>
 </html>
