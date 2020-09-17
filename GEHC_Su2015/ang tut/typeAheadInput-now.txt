@@ -1,0 +1,49 @@
+<link rel="stylesheet" type="text/css"
+      href="caseexchange/modules/create-case/directives/to-field/to-field.css">
+	  
+<div style="margin-bottom: 10px;">
+    <div style="width:405px;">
+       <div id="selected-recipients">
+         <label>To*</label>
+           <div class="chosen-container chosen-container-multi chosen-with-drop chosen-container-active recipients-container">
+             <ul class="chosen-choices unstyled ul-style" ng-class="{'control-error': displayNoRecipientError, 'custom-highlight-ul' : toFieldInputFocused}">
+               <li class="search-choice" ng-repeat="recipient in addedRecipients">
+                 <span>{{recipient.lastName}} {{recipient.firstName}}
+                   <a class="search-choice-close" data-option-array-index="11" ng-click="removeRecipient(recipient);"></a>
+                 </span>
+               </li>
+               <li class="search-field">
+                 <input  type              = "text" 
+                         id                = "recipientsInput"
+                         name              = "recipientsInput"
+                         class             = "recipients-input-style" 
+                         autocomplete      = "off" 
+                         placeholder       = "Enter last name"
+                         ng-model          = "recipientsInput"
+                         ng-blur           = "hideInfoMessages();"
+                         ng-click          = "highlightToField();"
+                         typeahead         = "user as user.email for user in gettingActiveUsers($viewValue)"
+                         typeahead-wait-ms = "500"> {{recipientsInput}}
+               </li>
+             </ul>
+             <div class="chosen-drop chosen-dropdown-custom" id="usersChosenList" ng-if="usersInTypeahead && usersInTypeahead.length > 0">
+               <ul class="chosen-results unstyled" ng-if="usersInTypeahead && usersInTypeahead.length > 0">
+                 <li     class                   = "active-result"  
+                         data-option-array-index = "0"
+                         ng-class                = "{highlighted: hover}"
+                         ng-mouseenter           = "hover = true"
+                         ng-mouseleave           = "hover = false"
+                         ng-repeat               = "user in usersInTypeahead"  
+                         ng-click                = "addRecipient(user);">{{user.lastName}} {{user.firstName}}
+                 </li>
+               </ul>
+             </div>
+             <div id="user-list-spinner" ng-if="fetchingUserList === true"></div>
+             <div>
+               <span id="msg-no-user" class="pull-right" ng-if="noUsersFound">No records found!!!</span>
+               <span id="msg-user-already-selected" class="pull-right" ng-if="recipientAlreadySelected">Recipient already selected!!!</span>
+             </div>
+           </div>
+        </div>
+    </div>
+</div>

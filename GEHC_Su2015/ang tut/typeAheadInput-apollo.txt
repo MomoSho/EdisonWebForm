@@ -1,0 +1,30 @@
+<div ng-if="caseExistingData === null" id="recipients" class="ng-scope">
+        <div id="selected-recipients">
+          <div class="control-group ng-isolate-scope" ng-class="{ error: isError, success: isSuccess, 'hide-validation': hideValidation || false }" label="To*" error-on-submit="true" error-on-dirty="true">
+  <!-- ngIf: label --><label ng-if="label" class="control-label ng-scope ng-binding" for="recipientsInput">To*</label><!-- end ngIf: label -->
+  <!-- ngIf: tooltipMsg -->
+  <div class="controls" ng-transclude="">
+            <div class="chosen-container chosen-container-multi chosen-with-drop chosen-container-active recipients-container ng-scope">
+              <ul class="chosen-choices unstyled ul-style" ng-class="{'control-error': displayNoRecipientError, 'custom-highlight-ul' : toFieldInputFocused}">
+                <!-- ngRepeat: recipient in addedRecipients -->
+                <li class="search-field">
+                  <input type="text" id="recipientsInput" name="recipientsInput" class="recipients-input-style ng-isolate-scope ng-pristine ng-valid" autocomplete="off" placeholder="Please Enter Name or Email" ng-model="formData.recipientsInput" ng-blur="hideInfoMessages();" ng-click="highlightToField();" typeahead="user as user.email for user in getActiveUsers($viewValue)" typeahead-wait-ms="500" ge-xss="" reset-on-script=""><ul class="dropdown-menu ng-isolate-scope" ng-style="{display: isOpen()&amp;&amp;'block' || 'none', top: position.top+'px', left: position.left+'px'}" typeahead-popup="" matches="matches" active="activeIdx" select="select(activeIdx)" query="query" position="position" style="display: none;">
+    <!-- ngRepeat: match in matches -->
+</ul>
+                </li>
+              </ul>
+              <div class="chosen-drop chosen-dropdown-custom ng-hide" id="usersChosenList" ng-show="usersInTypeahead.length > 0">
+                <ul class="chosen-results unstyled ng-hide" ng-show="usersInTypeahead.length > 0">
+                  <!-- ngRepeat: recipient in usersInTypeahead -->
+                </ul>
+              </div>
+              <!-- ngIf: fetchingUserList === true -->
+              <div>
+                <!-- ngIf: noUsersFound -->
+                <!-- ngIf: recipientAlreadySelected -->
+              </div>
+            </div>
+          </div>
+</div>
+        </div>
+      </div>

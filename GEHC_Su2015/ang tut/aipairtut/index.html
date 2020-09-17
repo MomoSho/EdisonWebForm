@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html ng-app="app">
+	<head>
+		<!-- https://www.airpair.com/angularjs/posts/component-based-angularjs-directives -->
+		<!-- Tutorial at http://plnkr.co/edit/wBb04Z4l5gLDEtKW3keK?p=preview -->
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</head>
+<body>
+	<div class="multiplication-table" ng-controller="MultiplicationTableCtrl as ctrl">
+		<div ng-repeat="row in ctrl.rows">
+			<div ng-repeat="cell in row">{{ ($parent.$index + 1) * ($index + 1) }}</div>
+		</div>
+	</div>
+</body>
+</html>

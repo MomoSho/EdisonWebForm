@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<HTML ng-app="store">
+	<HEAD>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+	</HEAD>
+
+	<BODY ng-controller="StoreController as store">
+		<div ng-repeat="p in store.product" ng-hide="store.product.soldOut">
+			<h1> {{ p.name }} </h1>
+			<h2> ${{ p.price }} </h2>
+			<p> {{ p.product.description }}</p>
+
+			<button ng-show="store.product.canPurchase"> Add to Cart </button>
+		</div>
+
+		<script type="text/javascript" src="app.js"></script>
+
+		
+	</BODY>
+
+
+</HTML>
